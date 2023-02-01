@@ -5,7 +5,8 @@ public class Execute {
 
 	public static void main(String[] args) {
 		
-		Logic game = new Logic();
-		game.playGame();
+//		Logic game = new Logic();
+//		game.playGame();
+		Logic.playGame();
 	}
 }

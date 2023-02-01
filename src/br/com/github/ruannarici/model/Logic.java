@@ -3,9 +3,9 @@ import java.util.Scanner;
 
 public class Logic {
 
-	private String[][] slots = {{"1","2","3"},{"4","5","6"},{"7","8","9"}};
+	private static String[][] slots = {{"1","2","3"},{"4","5","6"},{"7","8","9"}};
 			
-	private void showSlots() {
+	private static void showSlots() {
 		System.out.println("> JOGO DA VELHA");
 		System.out.println("> Developed by: Ruan Narici");
 		System.out.println();
@@ -24,7 +24,7 @@ public class Logic {
 		System.out.println();
 	}
 	
-	private boolean verifySlot(String position) {
+	private static boolean verifySlot(String position) {
 		for (int line = 0; line < 3; line++) {
 			for (int column = 0; column < 3; column++) {
 				if (slots[line][column].contains(position)) {
@@ -35,7 +35,7 @@ public class Logic {
 		return true;
 	}
 	
-	private void selectSlot(String position, String player) {
+	private static void selectSlot(String position, String player) {
 		switch (position) {
 		case "1": slots[0][0] = slots[0][0].replace(position, player);
 		case "2": slots[0][1] = slots[0][1].replace(position, player);
@@ -49,7 +49,7 @@ public class Logic {
 		}
 	}
 	
-	private boolean verifyWinner(int moves) {
+	private static boolean verifyWinner(int moves) {
 		String[] winner = new String[8];
 		winner[0] = slots[0][0] + slots[0][1] + slots[0][2];
 		winner[1] = slots[1][0] + slots[1][1] + slots[1][2];
@@ -77,7 +77,7 @@ public class Logic {
 		}
 	}
 	
-	public void playGame() {
+	public static void playGame() {
 		int moves = 0;
 		int status = 0;
 		String position = "null";
